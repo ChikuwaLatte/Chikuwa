@@ -1,0 +1,13 @@
+service:
+    message: Hello, World!OHOHOHOH
+
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+    datasource:
+        url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_user
+        username: admin
+        password: admin
+        driver-class-name: com.mysql.cj.jdbc.Driver

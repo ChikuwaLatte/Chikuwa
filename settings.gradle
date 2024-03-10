@@ -1,0 +1,4 @@
+rootProject.name = 'chikuwa-latte'
+
+include 'game_api'
+include 'core'
