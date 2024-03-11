@@ -11,3 +11,10 @@ spring:
         username: admin
         password: admin
         driver-class-name: com.mysql.cj.jdbc.Driver
+    flyway:
+        baseline-version: 0
+        enabled: true
+        baseline-on-migrate: true
+    devtools:
+        restart:
+            enabled: true
