@@ -8,8 +8,14 @@ plugins {
 group = 'com.chikuwa_latte'
 version = '0.0.1-SNAPSHOT'
 
+// java {
+// 	sourceCompatibility = '17'
+// }
+
 java {
-	sourceCompatibility = '17'
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21) // 使用したいJDKのバージョン
+    }
 }
 
 configurations {
@@ -39,11 +45,11 @@ dependencies {
 	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 }
 
-// Javaの実行環境を指定する
-tasks.withType(JavaExec) {
-    // ここに使用したいJavaのインストールディレクトリのパスを指定する
-    executable = "/usr/local/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home/bin/java"
-}
+// // Javaの実行環境を指定する
+// tasks.withType(JavaExec) {
+//     // ここに使用したいJavaのインストールディレクトリのパスを指定する
+//     executable = "/usr/local/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home/bin/java"
+// }
 
 tasks.named('test') {
 	outputs.dir snippetsDir

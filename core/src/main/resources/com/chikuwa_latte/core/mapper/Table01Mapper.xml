@@ -34,7 +34,7 @@
     </insert>
     <update id="update">
         update  table_01
-        set     memp = #{memo}
+        set     memo = #{memo}
         where   user_id = #{userId}
     </update>
     

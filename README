@@ -1,0 +1,3 @@
+実行試行コマンド
+1. curl -X GET 'localhost:8080/greeting'
+2. curl -X POST 'localhost:8080/greeting/upsert?userId=1&memo=aab'

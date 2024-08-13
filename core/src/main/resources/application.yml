@@ -22,3 +22,14 @@ spring:
 mybatis:
     configuration:
         map-underscore-to-camel-case: true
+
+# 必要に応じてコメントアウトを解除
+# logging:
+#     level:
+#         root: INFO  # 全体のデフォルトログレベル
+#         org.springframework: DEBUG  # Spring のログを DEBUG レベルで出力
+#         org.mybatis: TRACE  # MyBatis のログを TRACE レベルで出力
+#         com.zaxxer.hikari: DEBUG  # HikariCP のログを DEBUG レベルで出力
+#         com.chikuwa_latte: DEBUG  # 自分のプロジェクトのログを DEBUG レベルで出力
+#     file:
+#         path: ./log/application.log  # ログをファイルに保存

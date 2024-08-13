@@ -1,4 +1,4 @@
-package com.chikuwa_latte.core.dao;
+package com.chikuwa_latte.core.repository;
 
 import java.util.List;
 
