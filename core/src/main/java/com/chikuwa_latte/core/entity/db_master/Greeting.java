@@ -1,4 +1,4 @@
-package com.chikuwa_latte.core.entity.master;
+package com.chikuwa_latte.core.entity.db_master;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.chikuwa_latte.core.entity.master.Greeting;
+import com.chikuwa_latte.core.entity.db_master.Greeting;
 import com.chikuwa_latte.core.service.TestService;
 
 import lombok.RequiredArgsConstructor;

@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.stereotype.Service;
 
 import com.chikuwa_latte.core.property.ServiceProperties;
-import com.chikuwa_latte.core.repository.Table01Dao;
+import com.chikuwa_latte.core.repository.db_master.Table01Dao;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

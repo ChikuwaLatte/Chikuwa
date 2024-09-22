@@ -1,11 +1,11 @@
-package com.chikuwa_latte.core.mapper;
+package com.chikuwa_latte.core.mapper.db_user;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import com.chikuwa_latte.core.entity.master.Table01;
+import com.chikuwa_latte.core.entity.db_master.Table01;
 
 import lombok.NonNull;
 

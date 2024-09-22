@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.2.0' apply false
 	id 'io.spring.dependency-management' version '1.1.4'
 	id 'org.asciidoctor.jvm.convert' version '3.3.2'
+	// id 'org.flywaydb.flyway' version '9.15.2'
 }
 
 group = 'com.chikuwa_latte'
@@ -39,6 +40,7 @@ dependencies {
 	// mybatis-spring-boot-starter-test:3.0.3と互換性のあるバージョンにすること
 	implementation 'org.mybatis:mybatis:3.5.16'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+	implementation 'org.mybatis.generator:mybatis-generator-core:1.4.2'
     runtimeOnly 'com.mysql:mysql-connector-j'
 	compileOnly 'org.projectlombok:lombok'
     // developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -62,3 +64,51 @@ tasks.named('asciidoctor') {
 	inputs.dir snippetsDir
 	dependsOn test
 }
+
+// // Flyway設定
+// flyway {
+// 	master {
+// 		user = 'admin'
+// 		password = 'admin'
+// 		host = 'localhost'
+// 		port = '3306'
+// 		schema = 'db_master'
+// 		encoding = 'UTF-8'
+// 		locations = ['filesystem:./core/src/main/resources/db/migration/db_master']
+// 	}
+// 	user {
+// 		user = 'admin'
+// 		password = 'admin'
+// 		host = 'localhost'
+// 		port = '3306'
+// 		schema = 'db_user'
+// 		encoding = 'UTF-8'
+// 		locations = ['filesystem:./core/src/main/resources/db/migration/db_user']
+// 	}
+// }
+
+// config.flyway.each { k, v ->
+// 	def methodName = k.replaceFirst(/[a-z]/) { it.toUpperCase() }
+
+// 	task "clean${methodName}"(type: org.flywaydb.gradle.task.FlywayCleanTask) {
+// 		extension = new org.flywaydb.gradle.FlywayExtension()
+// 		extension.locations = v.locations
+// 		extension.url = "jdbc:mysql//${v.host}:${v.port}/?useSSL=false"
+// 		extension.schema = [v.schema]
+// 		extension.user = v.user
+// 		extension.password = v.password
+// 		extension.encoding = v.encoding
+// 		extension.table = "${k}_flyway_schema_history"
+// 	}
+
+// 	task "migrate${methodName}"(type: org.flywaydb.gradle.task.FlywayMigrateTask) {
+// 		extension = new org.flywaydb.gradle.FlywayExtension()
+// 		extension.locations = v.locations
+// 		extension.url = "jdbc:mysql//${v.host}:${v.port}/?useSSL=false"
+// 		extension.schema = [v.schema]
+// 		extension.user = v.user
+// 		extension.password = v.password
+// 		extension.encoding = v.encoding
+// 		extension.table = "${k}_flyway_schema_history"
+// 	}
+// }

@@ -7,13 +7,20 @@ spring:
             ddl-auto: update
         show-sql: true
     datasource:
-        url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_user
-        username: admin
-        password: admin
-        driver-class-name: com.mysql.cj.jdbc.Driver
+        db-master:
+            jdbc-url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_master
+            username: admin
+            password: admin
+            driver-class-name: com.mysql.cj.jdbc.Driver
+        db-user:
+            jdbc-url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_user
+            username: admin
+            password: admin
+            driver-class-name: com.mysql.cj.jdbc.Driver
     flyway:
         baseline-version: 0
-        enabled: true
+        # DefaultConfigration.javaにFlywayの設定を記述したため、ここはfalseにする
+        enabled: false
         baseline-on-migrate: true
     devtools:
         restart:
@@ -23,7 +30,7 @@ mybatis:
     configuration:
         map-underscore-to-camel-case: true
 
-# 必要に応じてコメントアウトを解除
+# ログ: 必要に応じてコメントアウトを解除
 # logging:
 #     level:
 #         root: INFO  # 全体のデフォルトログレベル
