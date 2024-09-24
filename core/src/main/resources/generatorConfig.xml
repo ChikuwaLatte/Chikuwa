@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <context id="id" targetRuntime="MyBatis3DynamicSql">
+    <context id="id" targetRuntime="MyBatis3">
 
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
 
@@ -13,17 +13,18 @@
                         connectionURL="jdbc:mysql://localhost:3306/db_master"
                         userId="admin"
                         password="admin">
-            <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
 
         <javaTypeResolver>
             <property name="useJSR310Types" value="true" />
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.example.mbgenerator_test.mbgenerator.modelgen" targetProject="./src/main/java"/>
+        <javaModelGenerator targetPackage="com.chikuwa_latte.core.entity.db_master" targetProject="./core/src/main/java"/>
 
-        <javaClientGenerator targetPackage="com.example.mbgenerator_test.mbgenerator.mappergen" targetProject="./src/main/java"/>
+        <sqlMapGenerator targetPackage="com.chikuwa_latte.core.mapper.db_master"  targetProject="./core/src/main/resources"/>
 
-        <table tableName="%"/>
+        <javaClientGenerator targetPackage="com.chikuwa_latte.core.mapper.db_master" targetProject="./core/src/main/java" type="XMLMAPPER"/>
+
+        <table schema="db_master" tableName="%"/>
     </context>
 </generatorConfiguration>
