@@ -47,11 +47,16 @@ public class UserDataSourceConfiguration {
 
     @Bean
     public Flyway flywayDbUser(@Qualifier("dbUserDataSource") DataSource dbUserDataSource) {
-        return Flyway.configure()
-                .dataSource(dbUserDataSource)
-                .baselineOnMigrate(true)
-                .locations("classpath:db/migration/db_user")
-                .load();
+        Flyway flyway = Flyway.configure()
+            .dataSource(dbUserDataSource)
+            .baselineOnMigrate(true)
+            .locations("classpath:db/migration/db_user")
+            .table("user_flyway_schema_history")
+            .load();
+
+        flyway.repair();
+        flyway.migrate();
+        return flyway;
     }
 
     @Bean(name = "entityManagerFactoryUser")

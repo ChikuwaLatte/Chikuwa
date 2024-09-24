@@ -52,11 +52,16 @@ public class MasterDataSourceConfiguration {
     // Flywayの設定 migrationが両方のデータソースで使えるようにする
     @Bean
     public Flyway flywayDbMaster(@Qualifier("dbMasterDataSource") DataSource dbMasterDataSource) {
-        return Flyway.configure()
-                .dataSource(dbMasterDataSource)
-                .baselineOnMigrate(true)
-                .locations("classpath:db/migration/db_master")
-                .load();
+        Flyway flyway = Flyway.configure()
+            .dataSource(dbMasterDataSource)
+            .baselineOnMigrate(true)
+            .locations("classpath:db/migration/db_master")
+            .table("master_flyway_schema_history")
+            .load();
+
+        flyway.repair();
+        flyway.migrate();
+        return flyway;
     }
 
     // Master用のEntityManagerFactory

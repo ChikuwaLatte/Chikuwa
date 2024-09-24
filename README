@@ -3,3 +3,9 @@
 2. curl -X POST 'localhost:8080/greeting/upsert?userId=1&memo=aab'
 
 ./gradlew game_api:bootRun
+
+flyway -url=jdbc:mysql://localhost:3306/db_master -user=admin -password=admin repair
+flyway -url=jdbc:mysql://localhost:3306/db_user -user=admin -password=admin repair
+
+flyway -url=jdbc:mysql://localhost:3306/db_master -user=admin -password=admin clean
+flyway -url=jdbc:mysql://localhost:3306/db_user -user=admin -password=admin clean
