@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.chikuwa_latte.core.repository.db_master.Table01Dao;
+import com.chikuwa_latte.core.repository.db_user.Table01Dao;
 
 @SpringBootTest("service.message=Hello")
 public class TestServiceTest {

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <context id="db_master" targetRuntime="MyBatis3">
+    <context id="db_master" targetRuntime="MyBatis3" defaultModelType="flat">
+        <!-- これがないと、接続したDB以外のスキーマからもテーブルを検索してしまう -->
+        <property name="nullCatalogMeansCurrent" value="true"/>
 
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
 
@@ -25,6 +27,6 @@
 
         <javaClientGenerator targetPackage="com.chikuwa_latte.core.mapper.db_master" targetProject="./core/src/main/java" type="XMLMAPPER"/>
 
-        <table schema="db_master" tableName="%"/>
+        <table tableName="%" schema="db_master"/>
     </context>
 </generatorConfiguration>

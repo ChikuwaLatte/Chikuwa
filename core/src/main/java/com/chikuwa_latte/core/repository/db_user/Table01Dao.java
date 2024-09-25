@@ -1,10 +1,10 @@
-package com.chikuwa_latte.core.repository.db_master;
+package com.chikuwa_latte.core.repository.db_user;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.chikuwa_latte.core.entity.db_master.Table01;
+import com.chikuwa_latte.core.entity.db_user.Table01;
 import com.chikuwa_latte.core.mapper.db_user.Table01Mapper;
 
 import lombok.NonNull;

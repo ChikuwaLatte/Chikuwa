@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import com.chikuwa_latte.core.entity.db_master.Table01;
+import com.chikuwa_latte.core.entity.db_user.Table01;
 
 import lombok.NonNull;
 
