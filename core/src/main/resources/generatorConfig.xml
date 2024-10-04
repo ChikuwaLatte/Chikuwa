@@ -34,7 +34,14 @@
 
         <javaClientGenerator targetPackage="com.chikuwa_latte.core.mapper.db_master" targetProject="./core/src/main/java" type="XMLMAPPER"/>
 
-        <table tableName="%" schema="db_master"/>
+        <table tableName="%" schema="db_master" modelType="flat">
+            <columnOverride column="skill_type" javaType="com.chikuwa_latte.core.constant.SkillType"/>
+            <columnOverride column="attribute_type" javaType="com.chikuwa_latte.core.constant.AttributeType"/>
+            <columnOverride column="critical_rate_type" javaType="com.chikuwa_latte.core.constant.CriticalRateType"/>
+            <columnOverride column="effect_type" javaType="com.chikuwa_latte.core.constant.EffectType"/>
+            <columnOverride column="ailment" javaType="com.chikuwa_latte.core.constant.Ailment"/>
+            <columnOverride column="ability_type" javaType="com.chikuwa_latte.core.constant.AbilityType"/>
+        </table>
     </context>
     <context id="db_user" targetRuntime="MyBatis3" defaultModelType="flat">
 
@@ -69,6 +76,13 @@
 
         <javaClientGenerator targetPackage="com.chikuwa_latte.core.mapper.db_user" targetProject="./core/src/main/java" type="XMLMAPPER"/>
 
-        <table tableName="%" schema="db_user"/>
+        <table tableName="%" schema="db_user" modelType="flat">
+            <columnOverride column="skill_type" javaType="com.chikuwa_latte.core.constant.SkillType"/>
+            <columnOverride column="attribute_type" javaType="com.chikuwa_latte.core.constant.AttributeType"/>
+            <columnOverride column="critical_rate_type" javaType="com.chikuwa_latte.core.constant.CriticalRateType"/>
+            <columnOverride column="effect_type" javaType="com.chikuwa_latte.core.constant.EffectType"/>
+            <columnOverride column="ailment" javaType="com.chikuwa_latte.core.constant.Ailment"/>
+            <columnOverride column="ability_type" javaType="com.chikuwa_latte.core.constant.AbilityType"/>
+        </table>
     </context>
 </generatorConfiguration>

@@ -2,7 +2,10 @@
 1. curl -X GET 'localhost:8080/greeting'
 2. curl -X POST 'localhost:8080/greeting/upsert?userId=1&memo=aab'
 
+// 実行するとmigrateが走る
 ./gradlew game_api:bootRun
+
+// migrate後、dbの状態からentity等を生成
 ./gradlew mybatisGenerator
 ./gradlew mbGenerator
 
