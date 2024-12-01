@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public class AbilityStatusModel {
+    private final Integer hp;
     private final Integer attack;
     private final Integer defense;
     private final Integer specialAttack;

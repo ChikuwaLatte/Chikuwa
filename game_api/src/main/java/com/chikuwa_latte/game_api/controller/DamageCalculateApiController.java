@@ -1,6 +1,7 @@
 package com.chikuwa_latte.game_api.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,12 +17,12 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("damage-calcurate")
+@RequestMapping("damage-calculate")
 public class DamageCalculateApiController {
     private final DamageCalculateService damageCalculateService;
 
-    @GetMapping
-    public DamageCalculateResponse damageCalcurate(DamageCalculateRequest body) {
+    @PostMapping
+    public DamageCalculateResponse damageCalculate(@RequestBody DamageCalculateRequest body) {
         DamageCalculateResult result = damageCalculateService.calcDamage(
             body.getSkillId(),
             convertMonster(body.getAttackMonster()),
@@ -44,6 +45,7 @@ public class DamageCalculateApiController {
             request.getMonsterId(),
             request.getLevel(),
             new AbilityStatusModel(
+                request.getAbilityStatus().getHp(),
                 request.getAbilityStatus().getAttack(),
                 request.getAbilityStatus().getDefense(),
                 request.getAbilityStatus().getSpecialAttack(),
@@ -53,6 +55,16 @@ public class DamageCalculateApiController {
                 request.getAbilityStatus().getAvoidanceRate()
             ),
             request.getAilment()
+        );
+    }
+
+    @PostMapping("/test")
+    public DamageCalculateResponse test() {
+        return new DamageCalculateResponse(
+            200,
+            2,
+            85,
+            70
         );
     }
 }

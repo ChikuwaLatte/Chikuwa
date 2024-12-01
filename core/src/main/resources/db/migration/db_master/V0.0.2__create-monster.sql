@@ -15,7 +15,7 @@ CREATE TABLE monster (
 
 CREATE TABLE skill (
     id                    INT NOT NULL COMMENT 'ID',
-    skill_type            VARCHAR(255) NOT NULL COMMENT '技ID',
+    skill_type            VARCHAR(255) NOT NULL COMMENT '技タイプ',
     attribute_type        VARCHAR(255) NOT NULL COMMENT 'タイプ',
     power                 INT NOT NULL COMMENT '威力',
     hit_rate              INT NOT NULL COMMENT '命中率',

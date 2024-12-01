@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gradle",
+			"id": "/Users/sizzane/chikuwa-lattebootRunchikuwa-latte",
+			"script": "bootRun",
+			"description": "Runs this project as a Spring Boot application.",
+			"group": "application",
+			"project": "game-api",
+			"buildFile": "/Users/sizzane/chikuwa-latte/game-api/build.gradle",
+			"rootProject": "chikuwa-latte",
+			"projectFolder": "/Users/sizzane/chikuwa-latte",
+			"workspaceFolder": "/Users/sizzane/chikuwa-latte",
+			"args": "",
+			"javaDebug": true,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: game_api:bootRun"
+		}
+	]
+}
