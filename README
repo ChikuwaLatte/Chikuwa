@@ -6,7 +6,7 @@
 ./gradlew game_api:bootRun
 
 // migrate後、dbの状態からentity等を生成
-./gradlew mybatisGenerator
+; ./gradlew mybatisGenerator
 ./gradlew mbGenerator
 
 flyway -url=jdbc:mysql://localhost:3306/db_master -user=admin -password=admin repair
