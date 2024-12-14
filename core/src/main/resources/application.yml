@@ -17,6 +17,11 @@ spring:
             username: admin
             password: admin
             driver-class-name: com.mysql.cj.jdbc.Driver
+        db-transaction:
+            jdbc-url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_transaction
+            username: admin
+            password: admin
+            driver-class-name: com.mysql.cj.jdbc.Driver
     flyway:
         baseline-version: 0
         # DefaultConfigration.javaにFlywayの設定を記述したため、ここはfalseにする

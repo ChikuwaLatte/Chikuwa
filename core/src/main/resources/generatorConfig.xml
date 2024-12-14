@@ -41,6 +41,8 @@
             <columnOverride column="effect_type" javaType="com.chikuwa_latte.core.constant.EffectType"/>
             <columnOverride column="ailment" javaType="com.chikuwa_latte.core.constant.Ailment"/>
             <columnOverride column="ability_type" javaType="com.chikuwa_latte.core.constant.AbilityType"/>
+            <columnOverride column="battle_type" javaType="com.chikuwa_latte.core.constant.BattleType"/>
+            <columnOverride column="battle_status" javaType="com.chikuwa_latte.core.constant.BattleStatus"/>
         </table>
     </context>
     <context id="db_user" targetRuntime="MyBatis3" defaultModelType="flat">
@@ -83,6 +85,52 @@
             <columnOverride column="effect_type" javaType="com.chikuwa_latte.core.constant.EffectType"/>
             <columnOverride column="ailment" javaType="com.chikuwa_latte.core.constant.Ailment"/>
             <columnOverride column="ability_type" javaType="com.chikuwa_latte.core.constant.AbilityType"/>
+            <columnOverride column="battle_type" javaType="com.chikuwa_latte.core.constant.BattleType"/>
+            <columnOverride column="battle_status" javaType="com.chikuwa_latte.core.constant.BattleStatus"/>
+        </table>
+    </context>
+    <context id="db_transaction" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!--  MapperにMapperアノテーションを付与   -->
+        <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"/>
+        <!--  equalsおよびhashCodeを自動生成      -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/db_transaction"
+                        userId="admin"
+                        password="admin">
+            <!-- これがないと、接続したDB以外のスキーマからもテーブルを検索してしまう -->
+            <!-- see: https://zenn.dev/re24_1986/articles/5bf56ef844f6c3 -->
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="useJSR310Types" value="true" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.chikuwa_latte.core.entity.db_transaction" targetProject="./core/src/main/java">
+            <property name="constructorBased" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.chikuwa_latte.core.mapper.db_transaction"  targetProject="./core/src/main/resources"/>
+
+        <javaClientGenerator targetPackage="com.chikuwa_latte.core.mapper.db_transaction" targetProject="./core/src/main/java" type="XMLMAPPER"/>
+
+        <table tableName="%" schema="db_transaction" modelType="flat">
+            <columnOverride column="skill_type" javaType="com.chikuwa_latte.core.constant.SkillType"/>
+            <columnOverride column="attribute_type" javaType="com.chikuwa_latte.core.constant.AttributeType"/>
+            <columnOverride column="critical_rate_type" javaType="com.chikuwa_latte.core.constant.CriticalRateType"/>
+            <columnOverride column="effect_type" javaType="com.chikuwa_latte.core.constant.EffectType"/>
+            <columnOverride column="ailment" javaType="com.chikuwa_latte.core.constant.Ailment"/>
+            <columnOverride column="ability_type" javaType="com.chikuwa_latte.core.constant.AbilityType"/>
+            <columnOverride column="battle_type" javaType="com.chikuwa_latte.core.constant.BattleType"/>
+            <columnOverride column="battle_status" javaType="com.chikuwa_latte.core.constant.BattleStatus"/>
         </table>
     </context>
 </generatorConfiguration>
