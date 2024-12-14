@@ -35,6 +35,10 @@ mybatis:
     configuration:
         map-underscore-to-camel-case: true
 
+jwt:
+    secret: Gz89ebsp0VZjk2HDM1DOCVCDO/d28KwUAu9P4OB0BA62vUCOfbmMTQdhsQa1Q7jpwpcsvd9gwOVAbvwTlcKGPAHXmEGDi0Dqh5giDn7uvJc6/bYoULd5wSeIcz+8ULFTRJYm0hvxJOp48H6CCD7T7W3S2hbLDeJZAYqtIEXdyihRRJVktUmsbQyBIjeUT71HTT8XcelT4ezV6ynHEFp5dh37jAT5YIvR8vE6NFoAspI13D0CI4MZayztLgPROYhlaI0BCS8HqCV9Ml0bLckkkJyIaEtdvVDfFjSP3CSV93BrWPVE7MitTPVoOiPh3DcKLZhUUS0xq/WUpt78bpbA3Q==
+    expiration: 86400000
+
 # ログ: 必要に応じてコメントアウトを解除
 # logging:
 #     level:

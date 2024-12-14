@@ -25,5 +25,6 @@ flyway -url=jdbc:mysql://localhost:3306/db_user -user=admin -password=admin clea
 # curl
 python http_request.py http://localhost:8080/damage-calculate POST --data '{"skillId":1,"attackMonster":{"monsterId":1,"level":100,"abilityStatus":{"hp": 1000,"attack":100,"defense":200,"specialAttack":300,"specialDefense":400,"speed":500,"hitRate":80,"avoidanceRate":0},"ailment":"POISON"},"defenseMonster":{"monsterId":1,"level":50,"abilityStatus":{"hp": 1000,"attack":100,"defense":200,"specialAttack":300,"specialDefense":400,"speed":500,"hitRate":80,"avoidanceRate":0},"ailment":"POISON"},"fieldStatus":{"weather":"NONE"}}'
 
-
+# JWTキーの生成
+openssl rand 256 | base64
 
